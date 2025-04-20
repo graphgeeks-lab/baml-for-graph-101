@@ -1,0 +1,20 @@
+[project]
+name = "baml-for-graphs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "baml-py>=0.84.4",
+    "kuzu>=0.9.0",
+    "polars>=1.27.1",
+    "pyarrow>=19.0.1",
+    "pydantic>=2.11.3",
+    "python-dotenv>=1.1.0",
+    "yfiles-jupyter-graphs-for-kuzu>=0.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
