@@ -30,7 +30,7 @@ knowledge graph that captures the relationships between the entities described i
 The steps are as follows:
 
 1. Sketch a schema for the knowledge graph.
-2. Use BAML to prompt an LLM to extract structured data from the raw articles.
+2. Use a series of BAML functions to prompt an LLM to extract structured data from the raw articles.
   - Agent 1: Classify a news article as either a merger, acquisition, or neither.
   - Agent 2: Extract the information from articles that are about mergers into `data/mergers.json`.
   - Agent 3: Extract the information from articles that are about acquisitions into `data/acquisitions.json`.
@@ -40,6 +40,10 @@ The steps are as follows:
 The following diagram shows the sequence of steps.
 
 ![](./assets/baml-pipeline.png)
+
+Each BAML function, termed an "agent", is orchestrated via Python logic. More sophisticated error
+handling and fallbacks can be implemented as necessary by using agentic frameworks on top of
+BAML -- however, for a lot of cases like this, simple Python code is all you need.
 
 ## Data
 
