@@ -1,0 +1,10 @@
+services:
+  explorer:
+    container_name: mna_db
+    image: kuzudb/explorer:0.9.0
+    environment:
+      - MODE=READ_ONLY
+    ports:
+      - 8000:8000
+    volumes:
+      - ./ex_kuzu_db:/database
