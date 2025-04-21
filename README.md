@@ -10,7 +10,7 @@ knowledge graph in Cypher.
 
 ## Problem statement
 
-Consider that you are a developer at a financial asset company, tasked with tracking the merger and
+Imagine you are a developer at a financial asset company, tasked with tracking the merger and
 acquisition (M&A) activity of companies in the mining industry. You have access to a news API
 feed that updates daily with articles about the various mergers and acquisitions occurring in the
 mining industry.
@@ -41,9 +41,9 @@ The following diagram shows the sequence of steps.
 
 ![](./assets/baml-pipeline.png)
 
-Each BAML function, termed an "agent", is orchestrated via Python logic. More sophisticated error
-handling and fallbacks can be implemented as necessary by using agentic frameworks on top of
-BAML -- however, for a lot of cases like this, simple Python code is all you need.
+Each BAML function is orchestrated via Python logic. More sophisticated error
+handling and fallbacks ("agentic workflows") can be implemented as necessary by using your framework
+of choice on top of BAML -- however, for a lot of cases like this, simple Python code is all you need.
 
 ## Data
 
