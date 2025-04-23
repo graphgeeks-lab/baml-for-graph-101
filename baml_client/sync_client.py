@@ -156,7 +156,7 @@ class BamlSyncClient:
         self,
         text: str,
         baml_options: BamlCallOptions = {},
-    ) -> List[types.Commodity]:
+    ) -> Union[List[types.Commodity], Optional[None]]:
       options: BamlCallOptions = {**self.__baml_options, **(baml_options or {})}
       __tb__ = options.get("tb", None)
       if __tb__ is not None:
@@ -177,7 +177,7 @@ class BamlSyncClient:
         __cr__,
         collectors,
       )
-      return cast(List[types.Commodity], raw.cast_to(types, types, partial_types, False))
+      return cast(Union[List[types.Commodity], Optional[None]], raw.cast_to(types, types, partial_types, False))
     
     def ExtractMergerInfo(
         self,
@@ -291,7 +291,7 @@ class BamlStreamClient:
         self,
         text: str,
         baml_options: BamlCallOptions = {},
-    ) -> baml_py.BamlSyncStream[List[Optional[types.Commodity]], List[types.Commodity]]:
+    ) -> baml_py.BamlSyncStream[Optional[Union[List[Optional[types.Commodity]], Optional[None]]], Union[List[types.Commodity], Optional[None]]]:
       options: BamlCallOptions = {**self.__baml_options, **(baml_options or {})}
       __tb__ = options.get("tb", None)
       if __tb__ is not None:
@@ -314,10 +314,10 @@ class BamlStreamClient:
         collectors,
       )
 
-      return baml_py.BamlSyncStream[List[Optional[types.Commodity]], List[types.Commodity]](
+      return baml_py.BamlSyncStream[Optional[Union[List[Optional[types.Commodity]], Optional[None]]], Union[List[types.Commodity], Optional[None]]](
         raw,
-        lambda x: cast(List[Optional[types.Commodity]], x.cast_to(types, types, partial_types, True)),
-        lambda x: cast(List[types.Commodity], x.cast_to(types, types, partial_types, False)),
+        lambda x: cast(Optional[Union[List[Optional[types.Commodity]], Optional[None]]], x.cast_to(types, types, partial_types, True)),
+        lambda x: cast(Union[List[types.Commodity], Optional[None]], x.cast_to(types, types, partial_types, False)),
         self.__ctx_manager.get(),
       )
     
