@@ -38,6 +38,16 @@ client<llm> CustomGPT4o {
   }
 }
 
+client<llm> CustomGPT41Nano {
+  provider openai
+  retry_policy Exponential
+  options {
+    model "gpt-4.1-nano"
+    api_key env.OPENAI_API_KEY
+    temperature 0.1
+  }
+}
+
 client<llm> CustomGPT4oMini {
   provider openai
   retry_policy Exponential

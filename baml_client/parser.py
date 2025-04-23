@@ -93,7 +93,7 @@ class LlmResponseParser:
         self,
         llm_response: str,
         baml_options: BamlCallOptions = {},
-    ) -> List[types.Commodity]:
+    ) -> Union[List[types.Commodity], Optional[None]]:
       __tb__ = baml_options.get("tb", None)
       if __tb__ is not None:
         tb = __tb__._tb # type: ignore (we know how to use this private attribute)
@@ -113,7 +113,7 @@ class LlmResponseParser:
         __cr__,
       )
 
-      return cast(List[types.Commodity], parsed)
+      return cast(Union[List[types.Commodity], Optional[None]], parsed)
     
     def ExtractMergerInfo(
         self,
@@ -208,7 +208,7 @@ class LlmStreamParser:
         self,
         llm_response: str,
         baml_options: BamlCallOptions = {},
-    ) -> List[Optional[types.Commodity]]:
+    ) -> Optional[Union[List[Optional[types.Commodity]], Optional[None]]]:
       __tb__ = baml_options.get("tb", None)
       if __tb__ is not None:
         tb = __tb__._tb # type: ignore (we know how to use this private attribute)
@@ -228,7 +228,7 @@ class LlmStreamParser:
         __cr__,
       )
 
-      return cast(List[Optional[types.Commodity]], parsed)
+      return cast(Optional[Union[List[Optional[types.Commodity]], Optional[None]]], parsed)
     
     def ExtractMergerInfo(
         self,
