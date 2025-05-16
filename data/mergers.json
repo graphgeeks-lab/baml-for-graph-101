@@ -1,0 +1,59 @@
+[
+    {
+        "company_1": "Sayona Mining",
+        "company_1_ticker": null,
+        "company_2": "Piedmont Lithium",
+        "company_2_ticker": null,
+        "merged_entity": "Elevra Lithium",
+        "merged_entity_country": "United States",
+        "deal_amount": null,
+        "category": "Merger",
+        "time_period": "April 2025",
+        "deal_currency": "Unknown",
+        "id": 1,
+        "url": "https://www.australianmining.com.au/elevra-lithium-a-defining-moment-in-north-american-lithium/",
+        "title": "Elevra: \u2018A defining moment in North American lithium\u2019",
+        "date": "2025-04-09",
+        "commodities": [
+            "Lithium"
+        ]
+    },
+    {
+        "company_1": "Karora Resources",
+        "company_1_ticker": null,
+        "company_2": "Westgold",
+        "company_2_ticker": null,
+        "merged_entity": null,
+        "merged_entity_country": "Australia",
+        "deal_amount": "3.4b",
+        "category": "Merger",
+        "time_period": "July 2024",
+        "deal_currency": "AUD",
+        "id": 4,
+        "url": "https://www.australianmining.com.au/karora-says-yes-to-3-4b-westgold-merger/",
+        "title": "Karora says \u2018yes\u2019 to $3.4b Westgold merger",
+        "date": "2024-07-22",
+        "commodities": [
+            "Gold"
+        ]
+    },
+    {
+        "company_1": "Rock Tech Lithium",
+        "company_1_ticker": null,
+        "company_2": "Arcore",
+        "company_2_ticker": null,
+        "merged_entity": "NewCo",
+        "merged_entity_country": "Germany",
+        "deal_amount": null,
+        "category": "Merger",
+        "time_period": "February 2025",
+        "deal_currency": "Unknown",
+        "id": 12,
+        "url": "https://www.mining-technology.com/news/rock-tech-arcore-lithium-company/",
+        "title": "Rock Tech, Arcore to merge subsidiaries to form integrated lithium company",
+        "date": "2025-02-21",
+        "commodities": [
+            "Lithium"
+        ]
+    }
+]

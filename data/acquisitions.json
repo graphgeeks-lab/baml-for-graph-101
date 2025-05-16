@@ -1,0 +1,135 @@
+[
+    {
+        "parent_company": "Newcrest Mining",
+        "parent_company_ticker": null,
+        "parent_company_country": "Australia",
+        "child_company": "Pretium Resources",
+        "child_company_ticker": null,
+        "child_company_country": "Canada",
+        "deal_amount": "2.8bn",
+        "category": "Acquisition",
+        "time_period": "March 2022",
+        "deal_currency": "AUD",
+        "id": 2,
+        "url": "https://www.mining-technology.com/news/newcrest-mining-pretium-resources-acquisition/",
+        "title": "Newcrest Mining completes acquisition of Pretium Resources",
+        "date": "2022-03-09",
+        "commodities": [
+            "Gold"
+        ]
+    },
+    {
+        "parent_company": "Ramelius Resources",
+        "parent_company_ticker": null,
+        "parent_company_country": "Australia",
+        "child_company": "Spartan Resources",
+        "child_company_ticker": null,
+        "child_company_country": null,
+        "deal_amount": "2.4b",
+        "category": "Acquisition",
+        "time_period": "March 2025",
+        "deal_currency": "AUD",
+        "id": 5,
+        "url": "https://www.australianmining.com.au/ramelius-to-acquire-spartan-for-2-4bn/",
+        "title": "Ramelius to acquire Spartan for $2.4bn",
+        "date": "2025-03-17",
+        "commodities": [
+            "Gold"
+        ]
+    },
+    {
+        "parent_company": "Northern Star Resources",
+        "parent_company_ticker": null,
+        "parent_company_country": "Australia",
+        "child_company": "De Grey Mining",
+        "child_company_ticker": null,
+        "child_company_country": "Australia",
+        "deal_amount": "5b",
+        "category": "Acquisition",
+        "time_period": "December 2024",
+        "deal_currency": "AUD",
+        "id": 6,
+        "url": "https://www.australianmining.com.au/northern-stars-5-billion-play-for-de-grey/",
+        "title": "Northern Star\u2019s $5 billion play for De Grey",
+        "date": "2024-12-24",
+        "commodities": [
+            "Gold"
+        ]
+    },
+    {
+        "parent_company": "Rio Tinto",
+        "parent_company_ticker": null,
+        "parent_company_country": null,
+        "child_company": "Arcadium Lithium",
+        "child_company_ticker": null,
+        "child_company_country": null,
+        "deal_amount": "6.7b",
+        "category": "Acquisition",
+        "time_period": "March 2025",
+        "deal_currency": "USD",
+        "id": 7,
+        "url": "https://www.australianmining.com.au/meet-the-worlds-third-largest-lithium-supplier/",
+        "title": "Meet the world\u2019s third largest lithium supplier",
+        "date": "2025-03-07",
+        "commodities": [
+            "Lithium"
+        ]
+    },
+    {
+        "parent_company": "Equinox Gold",
+        "parent_company_ticker": "TSX: EQX",
+        "parent_company_country": "Canada",
+        "child_company": "Calibre Mining",
+        "child_company_ticker": "TSX: CXB",
+        "child_company_country": "Canada",
+        "deal_amount": "2.56b",
+        "category": "Acquisition",
+        "time_period": "February 2025",
+        "deal_currency": "CAD",
+        "id": 9,
+        "url": "https://www.northernminer.com/news/equinox-gold-to-buy-calibre-for-1-8b/1003875930/",
+        "title": "Equinox Gold to buy Calibre for $2.56B",
+        "date": "2025-02-24",
+        "commodities": [
+            "Gold"
+        ]
+    },
+    {
+        "parent_company": "Newmont",
+        "parent_company_ticker": null,
+        "parent_company_country": null,
+        "child_company": "Newcrest Mining Limited",
+        "child_company_ticker": null,
+        "child_company_country": null,
+        "deal_amount": null,
+        "category": "Acquisition",
+        "time_period": "November 2023",
+        "deal_currency": "Unknown",
+        "id": 10,
+        "url": "https://www.australianmining.com.au/newmont-officially-acquires-newcrest/",
+        "title": "Newmont officially acquires Newcrest",
+        "date": "2023-11-08",
+        "commodities": [
+            "Gold"
+        ]
+    },
+    {
+        "parent_company": "Pilbara Minerals",
+        "parent_company_ticker": "ASX:PLS",
+        "parent_company_country": "Australia",
+        "child_company": "Latin Resources",
+        "child_company_ticker": "ASX:LRS",
+        "child_company_country": "Australia",
+        "deal_amount": null,
+        "category": "Acquisition",
+        "time_period": "February 2025",
+        "deal_currency": "Unknown",
+        "id": 11,
+        "url": "https://mining.com.au/salinas-project-renamed-as-pilbara-minerals-completes-latin-acquisition/",
+        "title": "Salinas Project renamed as Pilbara Minerals completes Latin acquisition",
+        "date": "2025-02-05",
+        "commodities": [
+            "Lithium"
+        ]
+    }
+]
