@@ -27,7 +27,8 @@ conn.execute(
     """
     CREATE NODE TABLE IF NOT EXISTS Company (
         name STRING PRIMARY KEY,
-        ticker STRING
+        ticker STRING,
+        alias STRING
     )
     """
 )

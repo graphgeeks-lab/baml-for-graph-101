@@ -22,7 +22,7 @@ class AcquisitionInfo {
 
 // Create a function to extract the resume from a string.
 function ExtractAcquisitionInfo(text: string) -> AcquisitionInfo {
-  client OpenRouterGPT4_1_nano
+  client OpenRouterMistralSmall3_1_24b
   prompt #"
     From the given text about a company acquisition, extract the relevant information. For the deal
     amount, try to infer the likely currency based on the parent company's country. If you do not
@@ -47,6 +47,8 @@ test Test1 {
   }
   @@assert({{ this.parent_company == "Newcrest Mining" }})
   @@assert({{ this.child_company == "Pretium Resources" }})
+
+  @@assert({{ this.deal_currency == "AUD" }})
 }
 
 test Test2 {

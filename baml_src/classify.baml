@@ -6,7 +6,7 @@ enum ArticleType {
 
 function ClassifyArticle(text: string) -> ArticleType {
 //   client CustomGPT4oMini
-  client OpenRouterGPT4_1_nano
+  client OpenRouterMistralSmall3_1_24b
   prompt #"
     Analyze the following news article and classify it according to whether it's a "Merger" or "Acquisition".
     If it mentions a potential or failed deal, classify it as "Other".

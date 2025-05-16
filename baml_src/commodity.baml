@@ -12,10 +12,11 @@ enum Commodity {
 }
 
 function ExtractCommodityInfo(text: string) -> Commodity[] | null{
-    client OpenRouterGPT4_1_nano
+    client OpenRouterMistralSmall3_1_24b
     prompt #"
         For the given text, identify the commodity that the companies mentioned in the text are most
-        likely producers of. If you are unsure, return "Other".
+        likely producers of. If the name of the commodity is not mentioned explicitly,
+        DO NOT GUESS - just return "Other".
 
         {{ ctx.output_format }}
 

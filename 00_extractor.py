@@ -67,9 +67,10 @@ def extract_commodity(text: str, info: dict[str, Any], num_sentences: int = 10) 
     text = extract_first_n_sentences(text, num_sentences=num_sentences)
     commodities = b.ExtractCommodityInfo(text)
     # Attach commodity fields to the info
-    commodities = [c.value for c in commodities]
-    info.update({"commodities": commodities})
-    print(f"Extracted commodities for article {info['id']}")
+    if commodities:
+        commodities = [c.value for c in commodities]
+        info.update({"commodities": commodities})
+        print(f"Extracted commodities for article {info['id']}")
     return info
 
 

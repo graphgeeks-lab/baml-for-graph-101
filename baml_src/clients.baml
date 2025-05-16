@@ -16,6 +16,20 @@ client<llm> OpenRouterGPT4_1_nano {
   }
 }
 
+client<llm> OpenRouterGemma_27b {
+  provider "openai-generic"
+  options {
+    base_url "https://openrouter.ai/api/v1"
+    api_key env.OPENROUTER_API_KEY
+    model "google/gemma-3-27b-it"
+    temperature 0.1
+    headers {
+      "HTTP-Referer" "https://thedataquarry.com" // Optional
+      "X-Title" "thedataquarry" // Optional
+    }
+  }
+}
+
 client<llm> OpenRouterMistralSmall3_1_24b {
   provider "openai-generic"
   options {
