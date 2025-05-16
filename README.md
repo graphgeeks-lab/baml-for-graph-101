@@ -36,15 +36,34 @@ The steps are as follows:
   - Function 3: Extract the information from articles that are about acquisitions into `data/acquisitions.json`.
   - Function 4: Extract the commodities that are produced by the companies & countries mentioned in the articles.
 3. Create a knowledge graph in Kuzu using the data extracted by the LLMs.
-4. Query the knowledge graph using Cypher.
+4. Fix company name extraction quality issues (entity resolution) via a secondary BAML pipeline.
+5. Query the knowledge graph using Cypher.
 
-The following diagram shows the sequence of steps.
+### BAML pipeline 1
+The first BAML pipeline is shown in the following diagram.
 
-![](./assets/baml-pipeline.png)
+![](./assets/baml-pipeline-1.png)
 
-Each BAML function is orchestrated via Python logic. More sophisticated error
-handling and fallbacks ("agentic workflows") can be implemented as necessary by using your framework
-of choice on top of BAML -- however, for a lot of cases like this, simple Python code is all you need.
+This produces two subgraphs, one for mergers and one for acquisitions, which are connected to each
+other because they may share the same companies, commodities, countries, etc.
+
+### BAML pipeline 2
+
+Once the initial BAML pipeline is complete, we may have some quality issues with the extracted
+entities, particularly with company names. For example, `NewCrest Mining` can also be present as
+`NewCrest Mining Limited` in some articles, resulting in duplicate company names.
+To address this, we can use a secondary BAML pipeline after identifying the duplicate company names
+where one company name is a substring of another.
+
+![](./assets/baml-pipeline-2.png)
+
+The final graph is updated where each company entity where we detected a duplicate entity elsewhere
+in the graph has a `alias` property that contains all the aliases for the company.
+
+> [!NOTE]
+> Each BAML function is orchestrated via Python logic. More sophisticated error
+> handling and fallbacks ("agentic workflows") can be implemented as necessary by using your framework
+> of choice on top of BAML -- however, for a lot of cases like this, simple Python code is all you need.
 
 ## Data
 
