@@ -79,13 +79,16 @@ if __name__ == "__main__":
     OUTPUT_PATH = "data/entities_resolved.csv"
     entities_resolved_df.write_csv(OUTPUT_PATH)
 
+    conn.execute("CREATE REL TABLE HAS_ALIAS(FROM Company TO Company)")
+
     # Load entities_resolved.csv into the graph
     conn.execute(
         f"""
         LOAD FROM '{OUTPUT_PATH}' (header=true)
-        MATCH (c:Company {{name: node_pk}})
+        MATCH (c:Company {{name: node_pk}}), (c2:Company {{name: alias}})
         SET c.alias = alias
-    """
+        MERGE (c)-[:HAS_ALIAS]->(c2)
+        """
     )
     print("Finished updating the graph with aliases for resolved company entities.")
 
