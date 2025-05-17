@@ -171,6 +171,8 @@ cython_debug/
 .pypirc
 .ruff_cache
 .DS_Store
+.vscode
 
 # Custom
 ex_kuzu_db
+baml_client/*

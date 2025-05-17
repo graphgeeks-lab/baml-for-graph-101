@@ -18,7 +18,7 @@ mergers_df = pl.read_json("data/mergers.json")
 conn.execute(
     """
     LOAD FROM mergers_df
-    WITH DISTINCT id, url, title, CAST(date AS DATE) AS date
+    WITH id, url, title, CAST(date AS DATE) AS date
     MERGE (a:Article {id: id})
     SET a.url = url, a.title = title, a.date = date
     """

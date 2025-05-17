@@ -3,15 +3,15 @@ name = "baml-for-graphs"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
-    "baml-py>=0.84.4",
-    "kuzu>=0.9.0",
-    "polars>=1.27.1",
-    "pyarrow>=19.0.1",
-    "pydantic>=2.11.3",
+    "baml-py>=0.88.0",
+    "kuzu>=0.10.0",
+    "polars>=1.29.0",
+    "pyarrow>=20.0.0",
+    "pydantic>=2.11.4",
     "python-dotenv>=1.1.0",
-    "yfiles-jupyter-graphs-for-kuzu>=0.0.3",
+    "yfiles-jupyter-graphs-for-kuzu>=0.0.4",
 ]
 
 [dependency-groups]
