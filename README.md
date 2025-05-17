@@ -30,14 +30,15 @@ knowledge graph that captures the relationships between the entities described i
 The steps are as follows:
 
 1. Sketch a schema for the knowledge graph.
-2. Use a series of BAML functions to prompt an LLM to extract structured data from the raw articles.
-  - Function 1: Classify a news article as either a merger, acquisition, or neither.
-  - Function 2: Extract the information from articles that are about mergers into `data/mergers.json`.
-  - Function 3: Extract the information from articles that are about acquisitions into `data/acquisitions.json`.
-  - Function 4: Extract the commodities that are produced by the companies & countries mentioned in the articles.
-3. Create a knowledge graph in Kuzu using the data extracted by the LLMs.
-4. Fix company name extraction quality issues (entity resolution) via a secondary BAML pipeline.
-5. Query the knowledge graph using Cypher.
+2. BAML pipeline 1: Extract structured data from the raw articles.
+    - Function 1: Classify a news article as either a merger, acquisition, or neither.
+    - Function 2: Extract the information from articles that are about mergers into `data/mergers.json`.
+    - Function 3: Extract the information from articles that are about acquisitions into `data/acquisitions.json`.
+    - Function 4: Extract the commodities that are produced by the companies & countries mentioned in the articles.
+3. Create knowledge graph: Insert the extracted data into a Kuzu database.
+4. BAML pipeline 2: Fix company name extraction quality issues (entity resolution).
+    - Function 5: Identify whether a company is the same as another company, based on neighbourhood information from the graph.
+5. Query the knowledge graph using Cypher!
 
 ### BAML pipeline 1
 The first BAML pipeline is shown in the following diagram.
@@ -57,8 +58,9 @@ where one company name is a substring of another.
 
 ![](./assets/baml-pipeline-2.png)
 
-The final graph is updated where each company entity where we detected a duplicate entity elsewhere
-in the graph has a `alias` property that contains all the aliases for the company.
+The final graph is updated where each company entity we detected as a duplicate elsewhere in the graph
+has a `alias` property that contains all the aliases for the company. We can also store the aliases
+as relationships between the company nodes, so that we can query them later.
 
 > [!NOTE]
 > Each BAML function is orchestrated via Python logic. More sophisticated error
@@ -67,7 +69,7 @@ in the graph has a `alias` property that contains all the aliases for the compan
 
 ## Data
 
-The data consists of publicly available news articles about M&A activity in the mining industry, from
+The dataset consists of publicly available news articles about M&A activity in the mining industry, from
 popular websites like [mining.com](https://www.mining.com/), [australianmining.com](https://www.australianmining.com.au/) and [northernminer.com](https://www.northernminer.com/). The data is semi-structured and in JSON format,
 with metadata about each article, as well as the article's content.
 
