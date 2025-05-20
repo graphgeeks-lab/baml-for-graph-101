@@ -8,6 +8,9 @@ outputs from LLMs, to extract nodes and relationships from the unstructured data
 also use [Kuzu](https://github.com/kuzudb/kuzu), an embedded graph database, to store and query the
 knowledge graph in Cypher.
 
+See [here](https://github.com/graphgeeks-lab/baml-for-graph-101/blob/main/GraphGeeks_Kuzu_BAML_Workshop.pdf)
+for the slides we'll use in the workshop. The rest of the good stuff is in the code!
+
 ## Problem statement
 
 Imagine you are a developer at a financial asset company, tasked with tracking the merger and
